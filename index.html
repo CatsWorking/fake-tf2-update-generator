@@ -1,136 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TF2 Fake Update Generator</title>
-  <style>
-    body {
-      background-color: #2e2e2e;
-      color: #f2f2f2;
-      font-family: "Trebuchet MS", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TF2 Mega Fake Update Generator</title>
+<style>
+  body {
+    background-color: #2e2e2e;
+    color: #f2f2f2;
+    font-family: "Trebuchet MS", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+  }
 
-    h1 {
-      color: #ffcc00;
-      text-shadow: 2px 2px #000;
-      margin-bottom: 1rem;
-    }
+  h1 {
+    color: #ffcc00;
+    text-shadow: 2px 2px #000;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 
-    #output {
-      background: #1e1e1e;
-      border: 2px solid #ffcc00;
-      padding: 20px;
-      width: 85%;
-      max-width: 700px;
-      min-height: 300px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #000;
-      font-size: 1.1rem;
-      white-space: pre-wrap;
-      overflow-y: auto;
-      max-height: 60vh;
-    }
+  #output {
+    background: #1e1e1e;
+    border: 2px solid #ffcc00;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    font-size: 1.1rem;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 70vh;
+  }
 
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #ffcc00;
-      border: none;
-      border-radius: 5px;
-      color: #222;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
-    }
+  button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    color: #222;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
 
-    button:hover {
-      background-color: #e6b800;
-    }
+  button:hover {
+    background-color: #e6b800;
+  }
 
-    footer {
-      position: absolute;
-      bottom: 10px;
-      color: #aaa;
-      font-size: 0.8rem;
-    }
-  </style>
+  footer {
+    position: absolute;
+    bottom: 10px;
+    color: #aaa;
+    font-size: 0.8rem;
+  }
+</style>
 </head>
 <body>
-  <h1>TF2 Fake Update Generator</h1>
-  <div id="output">Click “Generate Update” to see the latest totally real TF2 patch notes.</div>
-  <button onclick="generateUpdate()">Generate Update</button>
-  <footer>Made by ChatGPT [for map list] and Br4nd0n [main code] | Inspired by Valve’s legendary update style</footer>
+<h1>TF2 Mega Fake Update Generator</h1>
+<div id="output">Click “Generate Update” to see the most chaotic TF2 patch notes ever.</div>
+<button onclick="generateUpdate()">Generate Update</button>
+<footer>Made by ChatGPT | Chaos guaranteed</footer>
 
-  <script>
-    const maps = [
-      "ctf_2fort","ctf_2fort_invasion","ctf_doublecross","ctf_gorge","ctf_sawmill","ctf_turbine",
-      "ctf_turbine_event","ctf_well","cp_badlands","cp_borneo","cp_brazil","cp_cascade","cp_cascade_event",
-      "cp_dustbowl","cp_granary","cp_gravelpit","cp_metalworks","cp_process","cp_sunshine","cp_steel",
-      "cp_steel_event","koth_ashville","koth_bagel","koth_bagel_event","koth_borneo","koth_cascade",
-      "koth_cascade_event","koth_concert","koth_concert_event","koth_lakeside","koth_nucleus","koth_product",
-      "koth_sawmill","koth_sawmill_event","koth_sunshine","pl_badwater","pl_borneo","pl_borneo_event",
-      "pl_cascade","pl_cascade_event","pl_doomsday","pl_gravelpit","pl_hightower","pl_hightower_event",
-      "pl_mossrock","pl_mossrock_event","pl_swiftwater","pl_swiftwater_event","plr_hightower",
-      "plr_hightower_event","plr_nightfall","plr_nightfall_event","arena_bball","arena_bball_event",
-      "arena_lumberyard","arena_lumberyard_event","arena_nucleus","arena_sawmill","arena_sawmill_event",
-      "arena_watchtower","arena_watchtower_event","mvm_coaltown","mvm_coaltown_event","mvm_decoy",
-      "mvm_decoy_event","mvm_doomsday","mvm_doomsday_event","mvm_mountainlab","mvm_mountainlab_event",
-      "mvm_suijin","mvm_suijin_event","sd_doomsday","sd_doomsday_event","tc_hydro","tc_hydro_event",
-      "tr_walkway","tr_walkway_event","vs_saxtonhale","vs_saxtonhale_event"
-    ];
+<script>
+const maps = [
+  "ctf_2fort","ctf_2fort_invasion","ctf_doublecross","ctf_gorge","ctf_sawmill","ctf_turbine",
+  "ctf_turbine_event","ctf_well","cp_badlands","cp_borneo","cp_brazil","cp_cascade","cp_cascade_event",
+  "cp_dustbowl","cp_granary","cp_gravelpit","cp_metalworks","cp_process","cp_sunshine","cp_steel",
+  "cp_steel_event","koth_ashville","koth_bagel","koth_bagel_event","koth_borneo","koth_cascade",
+  "koth_cascade_event","koth_concert","koth_concert_event","koth_lakeside","koth_nucleus","koth_product",
+  "koth_sawmill","koth_sawmill_event","koth_sunshine","pl_badwater","pl_borneo","pl_borneo_event",
+  "pl_cascade","pl_cascade_event","pl_doomsday","pl_gravelpit","pl_hightower","pl_hightower_event",
+  "pl_mossrock","pl_mossrock_event","pl_swiftwater","pl_swiftwater_event","plr_hightower",
+  "plr_hightower_event","plr_nightfall","plr_nightfall_event","arena_bball","arena_bball_event",
+  "arena_lumberyard","arena_lumberyard_event","arena_nucleus","arena_sawmill","arena_sawmill_event",
+  "arena_watchtower","arena_watchtower_event","mvm_coaltown","mvm_coaltown_event","mvm_decoy",
+  "mvm_decoy_event","mvm_doomsday","mvm_doomsday_event","mvm_mountainlab","mvm_mountainlab_event",
+  "mvm_suijin","mvm_suijin_event","sd_doomsday","sd_doomsday_event","tc_hydro","tc_hydro_event",
+  "tr_walkway","tr_walkway_event","vs_saxtonhale","vs_saxtonhale_event"
+];
 
-    const subjects = [
-      "an Army of Melons", "a dancing Heavy", "the Ghost of Saxton Hale", "a sentient Dispenser",
-      "a suspiciously French bread monster", "the Australium Duck", "a new breed of angry Engineers",
-      "a horde of hats", "a giant sentry that shoots rockets", "a mysterious hole in the map",
-      "an invincible Scout", "the invisible Pyro", "a medic with three Ubercharges", "a glitchy Spy",
-      "a screaming Sniper", "an army of chickens", "a rocket-powered Engineer", "a haunted Demoman",
-      "a clown-filled payload", "a giant floating backpack", "a teleporting Red Team", "a bomb-carrying Sandvich",
-      "a sentient TF2 logo", "a suspicious number of ducks", "a cloud of confetti", "an angry Minigun",
-      "a screaming Saxton Hale", "a UFO piloted by a Soldier", "a nuclear banana", "a dancing robot",
-      "a new weapon that shoots kittens", "a teleporting pizza", "a sentry disguised as a bush"
-    ];
+// MASSIVE lists for chaotic generation
+const subjects = [
+  "an Army of Melons","a dancing Heavy","the Ghost of Saxton Hale","a sentient Dispenser",
+  "a suspiciously French bread monster","the Australium Duck","a new breed of angry Engineers",
+  "a horde of hats","a giant sentry that shoots rockets","a mysterious hole in the map",
+  "an invincible Scout","the invisible Pyro","a medic with three Ubercharges","a glitchy Spy",
+  "a screaming Sniper","an army of chickens","a rocket-powered Engineer","a haunted Demoman",
+  "a clown-filled payload","a giant floating backpack","a teleporting Red Team","a bomb-carrying Sandvich",
+  "a sentient TF2 logo","a suspicious number of ducks","a cloud of confetti","an angry Minigun",
+  "a screaming Saxton Hale","a UFO piloted by a Soldier","a nuclear banana","a dancing robot",
+  "a new weapon that shoots kittens","a teleporting pizza","a sentry disguised as a bush",
+  "a team of invisible Engineers","a Demoman riding a llama","a Pyro with flamethrower wings",
+  "a Spy wearing 100 hats","a Soldier launching cows","a map full of bouncing Rabbits",
+  "a sandwich that heals enemies","a rocket that screams","a dancing bomb","a sentry on a pogo stick",
+  "a Scout with a jetpack","a Medic healing trees","a Spy disguised as a rocket","a mysterious floating hat"
+];
 
-    const verbs = [
-      "added", "removed", "rebalanced", "buffed", "nerfed", "reintroduced",
-      "accidentally deleted", "fixed a bug with", "made minor improvements to",
-      "completely broke", "randomly teleported", "duplicated", "exploded", "enchanted",
-      "made invisible", "retextured", "turned upside down", "upgraded", "downgraded", "spawned",
-      "summoned", "upgraded into Australium", "wrapped in bacon"
-    ];
+const verbs = [
+  "added","removed","rebalanced","buffed","nerfed","reintroduced","accidentally deleted",
+  "fixed a bug with","made minor improvements to","completely broke","randomly teleported",
+  "duplicated","exploded","enchanted","made invisible","retextured","turned upside down",
+  "upgraded","downgraded","spawned","summoned","upgraded into Australium","wrapped in bacon",
+  "stole hats from","enchanted","launched","gave super speed to","made players dance with",
+  "caused chaos for","teleported","inflated","shrinked","confused","upgraded to God Mode",
+  "replaced with chickens","released confetti upon","made explode","duplicated endlessly",
+  "turned into a rubber duck","teleported randomly","summoned fireworks on","broke gravity in"
+];
 
-    const extras = [
-      "because players kept complaining.", "for no apparent reason.", "to improve gameplay consistency.",
-      "until further notice.", "as requested by absolutely no one.", "to make things more interesting.",
-      "after a heated internal debate.", "during a routine coffee spill.", "because it was too powerful.",
-      "to honor the spirit of chaos.", "just because.", "due to a mysterious bug.", "to confuse new players.",
-      "to make the game 137% more fun.", "after consulting the Illuminati.", "in memory of Bob.",
-      "because the map demanded it.", "for scientific research purposes.", "because hats."
-    ];
+const extras = [
+  "because players kept complaining.","for no apparent reason.","to improve gameplay consistency.",
+  "until further notice.","as requested by absolutely no one.","to make things more interesting.",
+  "after a heated internal debate.","during a routine coffee spill.","because it was too powerful.",
+  "to honor the spirit of chaos.","just because.","due to a mysterious bug.","to confuse new players.",
+  "to make the game 137% more fun.","after consulting the Illuminati.","in memory of Bob.",
+  "because the map demanded it.","for scientific research purposes.","because hats.",
+  "because ducks are scary.","to test the limits of sanity.","as part of a secret event.",
+  "to annoy the Engineers.","because gravity is overrated.","to spawn more hats.","to break all sentries.",
+  "because Heavy loves sandviches.","to make Scout run forever.","because Pyro is mysterious.",
+  "due to excessive rocket usage.","to honor Saxton Hale's spirit.","because the admins said so.",
+  "to confuse the Snipers.","to make the Demoman cry.","because teamwork is optional."
+];
 
-    function generateUpdate() {
-      let numNotes = Math.floor(Math.random() * 8) + 8; // 8–15 lines
-      let notes = "Team Fortress 2 Update Released!\n--------------------------------\n\n";
-      
-      for (let i = 0; i < numNotes; i++) {
-        let map = maps[Math.floor(Math.random() * maps.length)];
-        let subject = subjects[Math.floor(Math.random() * subjects.length)];
-        let verb = verbs[Math.floor(Math.random() * verbs.length)];
-        let extra = extras[Math.floor(Math.random() * extras.length)];
-        
-        notes += `- ${verb.charAt(0).toUpperCase() + verb.slice(1)} ${subject} to ${map} ${extra}\n`;
-      }
+function generateUpdate() {
+  let numNotes = Math.floor(Math.random() * 8) + 8; // 8–15 lines
+  let notes = "Team Fortress 2 Chaotic Mega Update Released!\n--------------------------------\n\n";
 
-      document.getElementById("output").textContent = notes;
+  for (let i = 0; i < numNotes; i++) {
+    let map = maps[Math.floor(Math.random() * maps.length)];
+    let numLines = Math.floor(Math.random() * 3) + 1; // 1–3 lines per note
+    for (let j = 0; j < numLines; j++) {
+      let subject = subjects[Math.floor(Math.random() * subjects.length)];
+      let verb = verbs[Math.floor(Math.random() * verbs.length)];
+      let extra = extras[Math.floor(Math.random() * extras.length)];
+      notes += `- ${verb.charAt(0).toUpperCase() + verb.slice(1)} ${subject} on ${map} ${extra}\n`;
     }
-  </script>
+  }
+
+  document.getElementById("output").textContent = notes;
+}
+</script>
 </body>
 </html>

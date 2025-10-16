@@ -13,7 +13,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
     }
 
@@ -27,13 +27,15 @@
       background: #1e1e1e;
       border: 2px solid #ffcc00;
       padding: 20px;
-      width: 80%;
-      max-width: 600px;
-      min-height: 150px;
+      width: 85%;
+      max-width: 700px;
+      min-height: 300px;
       border-radius: 10px;
       box-shadow: 0 0 10px #000;
       font-size: 1.1rem;
       white-space: pre-wrap;
+      overflow-y: auto;
+      max-height: 60vh;
     }
 
     button {
@@ -82,38 +84,40 @@
       "arena_watchtower","arena_watchtower_event","mvm_coaltown","mvm_coaltown_event","mvm_decoy",
       "mvm_decoy_event","mvm_doomsday","mvm_doomsday_event","mvm_mountainlab","mvm_mountainlab_event",
       "mvm_suijin","mvm_suijin_event","sd_doomsday","sd_doomsday_event","tc_hydro","tc_hydro_event",
-      "tr_walkway","tr_walkway_event","Miscellaneous (Various Modes)","vs_saxtonhale","vs_saxtonhale_event"
+      "tr_walkway","tr_walkway_event","vs_saxtonhale","vs_saxtonhale_event"
     ];
 
     const subjects = [
-      "an Army of Melons", "a dancing Heavy", "the Ghost of Saxton Hale",
-      "a sentient Dispenser", "a suspiciously French bread monster",
-      "the Australium Duck", "a new breed of angry Engineers",
-      "a horde of hats", "a giant sentry that shoots rockets",
-      "a mysterious hole in the map"
+      "an Army of Melons", "a dancing Heavy", "the Ghost of Saxton Hale", "a sentient Dispenser",
+      "a suspiciously French bread monster", "the Australium Duck", "a new breed of angry Engineers",
+      "a horde of hats", "a giant sentry that shoots rockets", "a mysterious hole in the map",
+      "an invincible Scout", "the invisible Pyro", "a medic with three Ubercharges", "a glitchy Spy",
+      "a screaming Sniper", "an army of chickens", "a rocket-powered Engineer", "a haunted Demoman",
+      "a clown-filled payload", "a giant floating backpack", "a teleporting Red Team", "a bomb-carrying Sandvich",
+      "a sentient TF2 logo", "a suspicious number of ducks", "a cloud of confetti", "an angry Minigun",
+      "a screaming Saxton Hale", "a UFO piloted by a Soldier", "a nuclear banana", "a dancing robot",
+      "a new weapon that shoots kittens", "a teleporting pizza", "a sentry disguised as a bush"
     ];
 
     const verbs = [
       "added", "removed", "rebalanced", "buffed", "nerfed", "reintroduced",
       "accidentally deleted", "fixed a bug with", "made minor improvements to",
-      "completely broke"
+      "completely broke", "randomly teleported", "duplicated", "exploded", "enchanted",
+      "made invisible", "retextured", "turned upside down", "upgraded", "downgraded", "spawned",
+      "summoned", "upgraded into Australium", "wrapped in bacon"
     ];
 
     const extras = [
-      "because players kept complaining.", 
-      "for no apparent reason.", 
-      "to improve gameplay consistency.", 
-      "until further notice.", 
-      "as requested by absolutely no one.", 
-      "to make things more interesting.",
-      "after a heated internal debate.", 
-      "during a routine coffee spill.", 
-      "because it was too powerful.",
-      "to honor the spirit of chaos."
+      "because players kept complaining.", "for no apparent reason.", "to improve gameplay consistency.",
+      "until further notice.", "as requested by absolutely no one.", "to make things more interesting.",
+      "after a heated internal debate.", "during a routine coffee spill.", "because it was too powerful.",
+      "to honor the spirit of chaos.", "just because.", "due to a mysterious bug.", "to confuse new players.",
+      "to make the game 137% more fun.", "after consulting the Illuminati.", "in memory of Bob.",
+      "because the map demanded it.", "for scientific research purposes.", "because hats."
     ];
 
     function generateUpdate() {
-      let numNotes = Math.floor(Math.random() * 4) + 3; // 3–6 lines
+      let numNotes = Math.floor(Math.random() * 8) + 8; // 8–15 lines
       let notes = "Team Fortress 2 Update Released!\n--------------------------------\n\n";
       
       for (let i = 0; i < numNotes; i++) {
